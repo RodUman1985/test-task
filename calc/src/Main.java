@@ -66,7 +66,11 @@ public class Main {
                 }
             }
         }
-        return summ == 1;
+        //вторая ошибка: недописанна логика
+        if (summ != 1) {
+            return false;
+        }
+        return true;
     }
 
 
@@ -91,7 +95,7 @@ public class Main {
 
     public static boolean operandValidation(String input) {
         int summ = 0;
-        String[] stringArray = input.split("[^1-9]");
+        String[] stringArray = input.split("[^1-10]");// первая ошибка: неверное regex вырожение
         String[] operandArray = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
         for (int i = 0; i < stringArray.length; i++) {
             for (int j = 0; j < operandArray.length; j++) {
@@ -107,7 +111,7 @@ public class Main {
     }
 
     public static String[] transformInputString(String input) {
-        String[] crtArray = input.split("[^1-9]");
+        String[] crtArray = input.split("[^1-10]");
         return crtArray;
     }
 //multiplication, division, addition, subtraction
@@ -130,4 +134,5 @@ public class Main {
     public static String subtraction(int a, int b) {
         return String.valueOf(a - b);
     }
+    //https://github.com/RodUman1985/test-task.git
 }
